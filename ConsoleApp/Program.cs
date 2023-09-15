@@ -30,7 +30,10 @@ internal class Program
         }
         else if (conversionChoice == "2")
         {
-            Console.WriteLine("WIP");
+            var romanNumeral = GetValidRomanNumeralToConvertFromUserInput();
+            var number = ConvertRomanNumeralToNumber(romanNumeral);
+
+            Console.WriteLine("\r\nThe number represented by {0} is: {1}", romanNumeral, number);
         }
         else
         {
@@ -76,5 +79,38 @@ internal class Program
     private static void DisplayRomanNumeral(int number, string romanNumeral)
     {
         Console.WriteLine("\r\nThe Roman Numeral for {0} is: {1}", number, romanNumeral);
+    }
+
+    private static string GetValidRomanNumeralToConvertFromUserInput()
+    {
+        var isValid = false;
+        var numeralToConvert = string.Empty;
+
+        while (!isValid)
+        {
+            Console.WriteLine("\r\nType the Roman Numeral you want to convert: ");
+
+            numeralToConvert = Console.ReadLine().ToUpper();
+
+            isValid = numeralToConvert.IsValidRomanNumeral();
+
+            if (!isValid)
+            {
+                Console.WriteLine("\r\nPlease write a valid Roman Numeral");
+            }
+            else
+            {
+                isValid = true;
+            }
+        }
+
+        return numeralToConvert;
+    }
+
+    private static int ConvertRomanNumeralToNumber(string romanNumeral)
+    {
+        var converter = new ConvertRomanToNumber();
+
+        return converter.CalculateNumber(romanNumeral);
     }
 }

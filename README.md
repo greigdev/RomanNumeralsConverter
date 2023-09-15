@@ -3,7 +3,7 @@
 ## Overview
 C# Console App that converts numbers to Roman Numerals. It has been created to solve a technical exercise.
 
-The solution demonstrates some Clean Code techniques and includes Unit Tests, but it's not intended to be production ready system.
+The solution demonstrates some Clean Code techniques and includes Unit Tests, but it's not intended to be a production ready system.
 
 ## Roman Numerals Guide
 

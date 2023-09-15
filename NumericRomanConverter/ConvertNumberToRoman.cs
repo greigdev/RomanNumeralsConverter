@@ -20,6 +20,11 @@ public class ConvertNumberToRoman : IConvertNumberToRoman
     /// <returns>Roman Numeral</returns>
     public string CalculateRomanNumeral(int number)
     {
+        if (number < 1 || number > 3999)
+        {
+            throw new ArgumentException("number to convert is out of range");
+        }
+
         var numericValueUnits = GetNumericValueUnits(number);
         var romanNumeralUnits = GetRomanNumeralUnits(numericValueUnits);
 

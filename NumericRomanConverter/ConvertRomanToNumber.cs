@@ -4,8 +4,13 @@ namespace NumericRomanConverter;
 
 public static class RomanNumeralValidator
 {
-    public static bool IsValidRomanNumeral(this string romanNumeral)
+    public static bool IsValidRomanNumeral(this string? romanNumeral)
     {
+        if (string.IsNullOrEmpty(romanNumeral))
+        {
+            return false;
+        }
+
         var validationPattern = @"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$";
 
         return Regex.IsMatch(romanNumeral, validationPattern);
@@ -44,7 +49,7 @@ public class ConvertRomanToNumber : IConvertRomanToNumber
         return total;
     }
 
-    public Dictionary<char, int> GetRomanNumeralValues()
+    private static Dictionary<char, int> GetRomanNumeralValues()
     {
         return new Dictionary<char, int>
             {

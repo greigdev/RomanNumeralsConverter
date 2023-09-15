@@ -129,10 +129,21 @@ public class ConvertNumberToRomanTest
     }
 
     [Fact]
-    public void GivenNumber1990_WhenCalculateRomanNumeral_ThenRomanNumeralOutputShouldEqual_MMXIV()
+    public void GivenNumber2014_WhenCalculateRomanNumeral_ThenRomanNumeralOutputShouldEqual_MMXIV()
     {
         int numberToConvert = 2014;
         string expectedRomanNumeral = "MMXIV";
+
+        var result = _converterUnderTest.CalculateRomanNumeral(numberToConvert);
+
+        Assert.Equal(expectedRomanNumeral, result);
+    }
+
+    [Fact]
+    public void GivenNumber2023_WhenCalculateRomanNumeral_ThenRomanNumeralOutputShouldEqual_MMXIV()
+    {
+        int numberToConvert = 2014;
+        string expectedRomanNumeral = "MMXXIII";
 
         var result = _converterUnderTest.CalculateRomanNumeral(numberToConvert);
 

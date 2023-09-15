@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArabicRomanConverter\NumericRomanConverter.csproj" />
+    <ProjectReference Include="..\NumericRomanConverter\NumericRomanConverter.csproj" />
   </ItemGroup>
 
 </Project>
